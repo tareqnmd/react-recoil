@@ -3,30 +3,43 @@ import { useRecoilState } from 'recoil';
 import { user } from '../recoil/user/atom';
 
 const Login = () => {
-	const [inputValue, setInputValue] = useState('');
+	const [inputValue, setInputValue] = useState({ name: '', email: '' });
 	const [, setUser] = useRecoilState(user);
 
 	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setUser({ email: inputValue });
+		setUser(inputValue);
 	};
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const value: string = e.target.value ?? '';
-		setInputValue(value);
+		const { name, value } = e.target;
+		setInputValue((prev) => ({ ...prev, [name]: value }));
 	};
 
 	return (
-		<form
-			onSubmit={handleSubmit}
-			className="login-area"
-		>
-			<input
-				type="email"
-				value={inputValue}
-				onChange={changeHandler}
-			/>
-			<button>Login</button>
-		</form>
+		<div className="app-area">
+			<form
+				onSubmit={handleSubmit}
+				className="login-area"
+			>
+				<input
+					type="name"
+					name="name"
+					placeholder="name"
+					required
+					value={inputValue.name}
+					onChange={changeHandler}
+				/>
+				<input
+					type="email"
+					name="email"
+					placeholder="email"
+					required
+					value={inputValue.email}
+					onChange={changeHandler}
+				/>
+				<button>Login</button>
+			</form>
+		</div>
 	);
 };
 

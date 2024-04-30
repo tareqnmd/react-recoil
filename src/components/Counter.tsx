@@ -7,12 +7,12 @@ const Counter = () => {
 	const count = useRecoilValue(counter);
 	const oddEven = useRecoilValue(counterOddEven);
 	return (
-		<>
+		<div className="counter-area">
 			<h2 className="counter-value">
 				Counter Value : {count ?? 0}({oddEven})
 			</h2>
 			<CounterInput />
-		</>
+		</div>
 	);
 };
 

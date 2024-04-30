@@ -5,6 +5,6 @@ export const loggedIn = selector({
 	key: 'loggedIn',
 	get: ({ get }) => {
 		const value = get(user);
-		return !!value.email;
+		return !!value.email && !!value.name;
 	},
 });

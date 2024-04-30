@@ -20,7 +20,7 @@ const CounterInput = () => {
 	};
 
 	return (
-		<div className="counter-area">
+		<div className="counter-input-area">
 			<input
 				type="number"
 				value={inputValue}

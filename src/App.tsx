@@ -1,12 +1,11 @@
+import { useRecoilValue } from 'recoil';
 import './App.css';
 import Home from './components/Home';
-import AppLayout from './components/RecoilRoot';
+import Login from './components/Login';
+import { loggedIn } from './recoil/user/selector';
 const App = () => {
-	return (
-		<AppLayout>
-			<Home />
-		</AppLayout>
-	);
+	const isLoggedIn = useRecoilValue(loggedIn);
+	return <>{isLoggedIn ? <Home /> : <Login />}</>;
 };
 
 export default App;

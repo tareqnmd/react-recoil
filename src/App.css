@@ -4,13 +4,61 @@ html {
 	font-family: 'Poppins', sans-serif;
 }
 
+.app-area {
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 20px;
+	min-height: 100dvh;
+	height: 100%;
+}
+
+.nav-area {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	span {
+		margin-left: auto;
+	}
+
+	button {
+		border: none;
+		background: black;
+		border-radius: 2px;
+		color: white;
+		padding: 6px 10px;
+		cursor: pointer;
+	}
+
+	.lg-none {
+		display: none;
+	}
+	@media (width < 769px) {
+		.sm-none {
+			display: none;
+		}
+
+		.lg-none {
+			display: block;
+		}
+	}
+}
+
+.counter-area {
+	height: 100%;
+	display: grid;
+	place-content: center;
+}
+
 .login-area {
 	display: grid;
 	place-content: center;
 	gap: 10px;
+	width: 100%;
 	input {
 		padding: 4px;
 	}
+
 	button {
 		border: none;
 		background: black;
@@ -21,17 +69,20 @@ html {
 	}
 }
 
-.counter-area {
+.counter-input-area {
 	display: grid;
 	place-content: center;
 	gap: 10px;
+
 	input {
 		padding: 6px;
 	}
 }
+
 .counter-btns {
 	display: flex;
 	gap: 10px;
+
 	button {
 		border: none;
 		background: black;
