@@ -16,30 +16,28 @@ const Login = () => {
 	};
 
 	return (
-		<div className="app-area">
-			<form
-				onSubmit={handleSubmit}
-				className="login-area"
-			>
-				<input
-					type="name"
-					name="name"
-					placeholder="name"
-					required
-					value={inputValue.name}
-					onChange={changeHandler}
-				/>
-				<input
-					type="email"
-					name="email"
-					placeholder="email"
-					required
-					value={inputValue.email}
-					onChange={changeHandler}
-				/>
-				<button>Login</button>
-			</form>
-		</div>
+		<form
+			onSubmit={handleSubmit}
+			className="login-area"
+		>
+			<input
+				type="name"
+				name="name"
+				placeholder="name"
+				required
+				value={inputValue.name}
+				onChange={changeHandler}
+			/>
+			<input
+				type="email"
+				name="email"
+				placeholder="email"
+				required
+				value={inputValue.email}
+				onChange={changeHandler}
+			/>
+			<button>Login</button>
+		</form>
 	);
 };
 

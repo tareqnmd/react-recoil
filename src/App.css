@@ -4,12 +4,19 @@ html {
 	font-family: 'Poppins', sans-serif;
 }
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 .app-area {
 	max-width: 1200px;
 	margin: auto;
 	padding: 0 20px;
 	min-height: 100dvh;
 	height: 100%;
+	display: grid;
+	grid-template-rows: auto 1fr;
 }
 
 .nav-area {
@@ -45,16 +52,17 @@ html {
 }
 
 .counter-area {
-	height: 100%;
 	display: grid;
 	place-content: center;
+	gap: 20px;
 }
 
 .login-area {
 	display: grid;
-	place-content: center;
 	gap: 10px;
 	width: 100%;
+	max-width: 400px;
+	margin: auto;
 	input {
 		padding: 4px;
 	}

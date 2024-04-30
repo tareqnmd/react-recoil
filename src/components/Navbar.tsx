@@ -9,11 +9,15 @@ const Navbar = () => {
 	return (
 		<nav className="nav-area">
 			<strong>Recoil</strong>
-			<span className="sm-none">
-				{userValue?.email}({userValue?.name})
-			</span>
-			<span className="lg-none">{userValue?.name}</span>
-			<button onClick={logOutHandler}>Logout</button>
+			{userValue?.email && (
+				<>
+					<span className="sm-none">
+						{userValue?.email}({userValue?.name})
+					</span>
+					<span className="lg-none">{userValue?.name}</span>
+					<button onClick={logOutHandler}>Logout</button>
+				</>
+			)}
 		</nav>
 	);
 };
