@@ -1,10 +1,10 @@
 import './App.css';
-import Counter from './components/Counter';
+import Home from './components/Home';
 import AppLayout from './components/RecoilRoot';
 const App = () => {
 	return (
 		<AppLayout>
-			<Counter />
+			<Home />
 		</AppLayout>
 	);
 };

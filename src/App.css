@@ -4,6 +4,23 @@ html {
 	font-family: 'Poppins', sans-serif;
 }
 
+.login-area {
+	display: grid;
+	place-content: center;
+	gap: 10px;
+	input {
+		padding: 4px;
+	}
+	button {
+		border: none;
+		background: black;
+		border-radius: 2px;
+		color: white;
+		padding: 6px 10px;
+		cursor: pointer;
+	}
+}
+
 .counter-area {
 	display: grid;
 	place-content: center;
