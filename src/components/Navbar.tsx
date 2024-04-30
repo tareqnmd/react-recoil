@@ -5,6 +5,7 @@ const Navbar = () => {
 	const [userValue, setUserValue] = useRecoilState(user);
 	const logOutHandler = () => {
 		setUserValue(userDefaultValue);
+		localStorage.removeItem('user');
 	};
 	return (
 		<nav className="nav-area">

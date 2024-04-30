@@ -1,5 +1,7 @@
 import { atom } from 'recoil';
 
+const localValue = localStorage.getItem('user');
+
 export const userDefaultValue = {
 	name: '',
 	email: '',
@@ -7,5 +9,5 @@ export const userDefaultValue = {
 
 export const user = atom({
 	key: 'user',
-	default: userDefaultValue,
+	default: localValue ? JSON.parse(localValue) : userDefaultValue,
 });

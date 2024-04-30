@@ -9,6 +9,7 @@ const Login = () => {
 	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setUser(inputValue);
+		localStorage.setItem('user', JSON.stringify(inputValue));
 	};
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
