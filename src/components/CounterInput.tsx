@@ -14,18 +14,21 @@ const CounterInput = () => {
 		setCount((prev) => prev + inputValue);
 	};
 
+	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value: number = e.target.value ? Number(e.target.value) ?? 0 : 0;
+		setInputValue(value);
+	};
+
 	return (
 		<div className="counter-area">
 			<input
 				type="number"
 				value={inputValue}
-				onChange={(e) => {
-					setInputValue(Number(e.target.value));
-				}}
+				onChange={changeHandler}
 			/>
 			<div className="counter-btns">
-				<button onClick={() => incrementOne()}>Increment 1</button>
-				<button onClick={() => dynamicIncrement()}>Dynamic Increment</button>
+				<button onClick={incrementOne}>Increment 1</button>
+				<button onClick={dynamicIncrement}>Dynamic Increment</button>
 			</div>
 		</div>
 	);
