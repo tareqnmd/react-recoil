@@ -80,8 +80,7 @@ html {
 .counter-input-area {
 	display: grid;
 	place-content: center;
-	gap: 10px;
-
+	gap: 6px;
 	input {
 		padding: 6px;
 	}
@@ -89,14 +88,33 @@ html {
 
 .counter-btns {
 	display: flex;
-	gap: 10px;
-
+	gap: 6px;
 	button {
 		border: none;
 		background: black;
 		border-radius: 2px;
 		color: white;
 		padding: 6px 10px;
+		cursor: pointer;
+	}
+}
+
+.dynamic-area {
+	display: flex;
+	align-items: stretch;
+	border: 2px solid #dfdfdf;
+	border-radius: 2px;
+	overflow: hidden;
+	justify-content: space-between;
+	input {
+		border: none;
+		flex-grow: 1;
+	}
+	button {
+		padding: 6px;
+		border: none;
+		background: black;
+		color: white;
 		cursor: pointer;
 	}
 }

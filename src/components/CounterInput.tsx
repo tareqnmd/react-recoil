@@ -25,21 +25,18 @@ const CounterInput = () => {
 
 	return (
 		<div className="counter-input-area">
-			<input
-				type="number"
-				value={inputValue}
-				onChange={changeHandler}
-			/>
 			<div className="counter-btns">
 				<button onClick={() => simpleCounter(1)}>Increment 1</button>
 				<button onClick={() => simpleCounter(-1)}>Decrement 1</button>
-				<button
-					disabled={inputValue < 0}
-					onClick={dynamicIncrement}
-				>
-					Dynamic Value
-				</button>
 				<button onClick={reset}>Reset</button>
+			</div>
+			<div className="dynamic-area">
+				<input
+					type="number"
+					value={inputValue}
+					onChange={changeHandler}
+				/>
+				<button onClick={dynamicIncrement}>Dynamic</button>
 			</div>
 		</div>
 	);
