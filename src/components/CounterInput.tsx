@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import { countDefaultValue, counter } from '../recoil/count/atom';
 
 const CounterInput = () => {
-	const [, setCount] = useRecoilState(counter);
+	const [count, setCount] = useRecoilState(counter);
 	const [inputValue, setInputValue] = useState(0);
 
 	const simpleCounter = (number: number) => {
@@ -23,7 +23,12 @@ const CounterInput = () => {
 		<div className="counter-input-area">
 			<div className="counter-btns">
 				<button onClick={() => simpleCounter(1)}>Increment 1</button>
-				<button onClick={() => simpleCounter(-1)}>Decrement 1</button>
+				<button
+					disabled={count - 1 < 0}
+					onClick={() => simpleCounter(-1)}
+				>
+					Decrement 1
+				</button>
 				<button onClick={reset}>Reset</button>
 			</div>
 			<div className="dynamic-area">
@@ -32,7 +37,12 @@ const CounterInput = () => {
 					value={inputValue}
 					onChange={changeHandler}
 				/>
-				<button onClick={() => simpleCounter(inputValue)}>Dynamic</button>
+				<button
+					disabled={inputValue < 0 ? count - inputValue > 0 : false}
+					onClick={() => simpleCounter(inputValue)}
+				>
+					Dynamic
+				</button>
 			</div>
 		</div>
 	);
