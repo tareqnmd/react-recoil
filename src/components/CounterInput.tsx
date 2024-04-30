@@ -7,11 +7,7 @@ const CounterInput = () => {
 	const [inputValue, setInputValue] = useState(0);
 
 	const simpleCounter = (number: number) => {
-		setCount((prev) => prev + number);
-	};
-
-	const dynamicIncrement = () => {
-		setCount((prev) => prev + inputValue);
+		setCount((prev) => (prev + number >= 0 ? prev + number : prev));
 	};
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +32,7 @@ const CounterInput = () => {
 					value={inputValue}
 					onChange={changeHandler}
 				/>
-				<button onClick={dynamicIncrement}>Dynamic</button>
+				<button onClick={() => simpleCounter(inputValue)}>Dynamic</button>
 			</div>
 		</div>
 	);
